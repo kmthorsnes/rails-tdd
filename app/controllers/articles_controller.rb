@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
   end
-  def landing
+  def newarticle
+    
   end
 end

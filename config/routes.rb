@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'articles/index'
-  get '/landing' => 'articles#landing'
+  get '/newarticle' => 'articles#newarticle'
 
   root controller: :articles, action: :index
 end

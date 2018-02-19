@@ -1,9 +1,9 @@
 Given("I visit the {string} page") do |page|
-  visit page 
+  visit page
 end
 
-When("I click {string} link") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click {string} link") do |page|
+  click_on page
 end
 
 When("I fill in {string} with {string}") do |string, string2|
