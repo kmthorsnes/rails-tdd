@@ -7,7 +7,7 @@ When("I click {string} link") do |page|
 end
 
 When("I fill in {string} with {string}") do |field, input|
-  fill_in('field', :with => 'input')
+  fill_in(field, :with => input)
 end
 
 When("I click {string} button") do |button|
@@ -15,5 +15,4 @@ When("I click {string} button") do |button|
 end
 
 Then("I should be on {string} page") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
 end
