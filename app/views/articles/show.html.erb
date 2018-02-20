@@ -1,0 +1,9 @@
+<form action="/articles/:id/edit">
+  <p><%= @article.title %></p>
+  <p><%= @article.content %></p>
+  <input type="submit" value="Edit">
+</form>
+
+  <% flash.keys.each do |type| %>
+    <%= flash[type] %>
+  <% end %>

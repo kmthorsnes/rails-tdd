@@ -1,19 +1,37 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+        @articles = Article.all
   end
 
-  def newarticle
-    
+  def new
+    @article = Article.new
   end
 
-  def learningrails5
+  def edit
 
   end
 
   def create
-    @newarticle = {title: params.require(:title), content: params.require(:content)}
-    # head :no_content
+    @article = Article.new(title: params[:title], content: params[:content])
+
+    if @article.save
+      flash[:notice] = 'Article was successfully created.'
+      redirect_to @article
+    else
+      if params[:title].blank? && params[:content].blank?
+        @message = "Both fields can't be blank"
+       elsif params[:content].blank?
+        @message = "Content can't be blank"
+      else
+        @message = "Title can't be blank"
+      end
+      render :new
+    end
   end
+
+    def show
+      @article = Article.find(params[:id])
+    end
+
 
 end
