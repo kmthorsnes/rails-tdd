@@ -7,10 +7,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def edit
-
-  end
-
   def create
     @article = Article.new(title: params[:title], content: params[:content])
 
@@ -19,7 +15,7 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       if params[:title].blank? && params[:content].blank?
-        @message = "Both fields can't be blank"
+        @message = "Fields can't be blank"
        elsif params[:content].blank?
         @message = "Content can't be blank"
       else
@@ -29,9 +25,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-    def show
-      @article = Article.find(params[:id])
-    end
-
-
+  def show
+    @article = Article.find(params[:id])
+  end
 end
