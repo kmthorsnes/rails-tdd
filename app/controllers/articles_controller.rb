@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-        @articles = Article.all
+    @articles = Article.all
   end
 
   def new
@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: params[:title], content: params[:content])
+    @article = Article.new(title: params[:title], content: params[:content], author: params[:author])
 
     if @article.save
       flash[:notice] = 'Article was successfully created.'
