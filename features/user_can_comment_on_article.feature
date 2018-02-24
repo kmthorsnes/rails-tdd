@@ -15,5 +15,5 @@ Scenario: User adds a comment
   And I fill in 'Comment' with 'This is awesome'
   And I fill in 'Email' with 'jf@ca.com'
   And I click 'Create Comment'
-  Then I should be on 'Learn Rails 5' page
+  Then I should be on 'Learn Rails 5'
   And I should see 'jf@ca.com'
