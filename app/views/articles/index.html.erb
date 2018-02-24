@@ -1,6 +1,6 @@
 <a href="/articles/new">new</a>
 
 <% @articles.each do |article| %>
-  <p><%= article.title %></p>
+  <p><%= link_to article.title, article_path(article) %></p>
   <p><%= article.content %></p>
 <% end %>
