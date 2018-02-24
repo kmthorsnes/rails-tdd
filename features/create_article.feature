@@ -5,7 +5,7 @@ Feature: Create articles
 
   Background:
     Given I visit the site
-    When I click "new" link
+    When I click "Create an article" link
 
   Scenario: Successfully create an article [Happy Path]
     When I fill in "title" with "Learning Rails 5"

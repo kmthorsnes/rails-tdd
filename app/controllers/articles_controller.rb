@@ -8,24 +8,28 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: params[:title], content: params[:content], author: params[:author])
-
+    @article = Article.new(article_params)
+    binding.pry
     if @article.save
-      flash[:notice] = 'Article was successfully created.'
+      flash[:success] = 'Article was successfully created.'
       redirect_to @article
     else
-      if params[:title].blank? && params[:content].blank?
-        @message = "Fields can't be blank"
-       elsif params[:content].blank?
-        @message = "Content can't be blank"
+      if params[:title].blank? || params[:content].blank?
+        flash[:error] = "Fields can't be blank"
+        redirect_back(fallback_location: root_path)
       else
-        @message = "Title can't be blank"
+        render :new
       end
-      render :new
     end
   end
 
   def show
     @article = Article.find(params[:id])
+  end
+
+  private
+
+  def article_params
+  	params.permit(:title, :content, :author)
   end
 end

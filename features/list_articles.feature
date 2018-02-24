@@ -10,10 +10,11 @@ Feature: List articles on the landing page
       | Learn Rails 5        | Build awesome rails applications | Faraz  |
 
   Scenario: Viewing list of articles on application's landing page
-    When I am on the landing page
+    When I visit the site
     Then I should see "A breaking news item"
     And I should see "Some really breaking action"
-    And I should see "Written by Thomas at 2018-02-23"
+    And I should see "Written by Thomas"
+    And I should see "at 2018-02-24"
     And I should see "Learn Rails 5"
     And I should see "Build awesome rails applications"
-    And I should see "by Faraz at 2018-08-23"
+    And I should see "by Faraz at 2018-02-24"

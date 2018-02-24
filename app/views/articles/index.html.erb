@@ -1,8 +1,12 @@
-<a href="/articles/new">new</a>
+<p>
+  <%= link_to 'Create an article', new_article_path %>
+</p>
+
+<!-- <a href="/new_article_path">new</a> -->
 
 <% @articles.each do |article| %>
   <p><%= article.title %></p>
   <p><%= article.content %></p>
-  <p><%= article.author %></p>
+  <p>Written by <%= article.author %> at <%= article.created_at.strftime("%F") %> </p>
 
 <% end %>

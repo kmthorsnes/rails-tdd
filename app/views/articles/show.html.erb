@@ -1,6 +1,7 @@
 <form action="/articles/:id/edit">
   <p><%= @article.title %></p>
   <p><%= @article.content %></p>
+  <p>Written by <%= @article.author %></p>
   <input type="submit" value="Edit">
 </form>
 
