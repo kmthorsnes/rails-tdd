@@ -1,15 +1,7 @@
-<%= form_with model: @article, url: articles_path(@article), local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: 'title' %>
-  </p>
+<form  method="post" action="/articles">
+  <input type="text" name="title">
+  <input type="text" name="content">
+  <input type="submit" value="Create Article">
+</form>
 
-  <p>
-    <%= form.label :content %><br>
-    <%= form.text_area :content, id: 'content' %>
-  </p>
-
-  <p>
-    <%= form.submit value: 'Create Article'%>
-  </p>
-<% end %>
+<h1><%= @message %></h1>
