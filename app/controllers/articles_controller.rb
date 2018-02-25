@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: params[:title], content: params[:content])
+    @article = Article.new(article_params)
 
     if @article.save
       flash[:notice] = 'Article was successfully created.'
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  # def article_params
-  # 	params.permit(:title, :content, :author)
-  # end
+  def article_params
+  	params.permit(:title, :content, :author)
+  end
 end

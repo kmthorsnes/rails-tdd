@@ -10,6 +10,7 @@ Feature: Create articles
   Scenario: Successfully create an article [Happy Path]
     When I fill in "title" with "Learning Rails 5"
     And I fill in "content" with "Excited about learning a new framework"
+    And I fill in "author" with "Faraz"
     And I click "Create Article" button
     Then I should be on "Learning Rails 5" page
     And I should see "Article was successfully created."
